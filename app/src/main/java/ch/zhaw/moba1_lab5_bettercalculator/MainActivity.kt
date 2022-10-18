@@ -74,8 +74,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
 
     // TODO
     private fun reset() {
-        //firstNo = null
-        //secondNo = null
+        firstNo = null
+        secondNo = null
         //result = ""
         operation = ""
     }
@@ -111,7 +111,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     }
 
     private fun putResult(calc: Double) {
-        //resultField.text = calc.toString()
+        resultField.text = calc.toString()
+        reset()
+        firstNo = calc
     }
 
 }
