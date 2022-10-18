@@ -67,11 +67,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                 equals -> calculate()
                 clear -> reset()
 
-                // TODO numbers
+                // TODO numbers, -> setOperand()
             }
         }
     }
 
+    // TODO
     private fun reset() {
         //firstNo = null
         //secondNo = null
@@ -82,12 +83,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     private fun setOperation(op: String) {
         if (firstNo == null) {
             resultField.text = "enter number first"
+        } else {
+            operation = op
         }
-        operation = op
     }
 
-    private fun setOperand() {
-        if (firstNo == null && secondNo == null) {
+    // TODO find solution for this function
+    private fun setOperand(operand: Int) {
+        if (firstNo == null) {
+            firstNo = operand
+        } else if (operation == "") {
+            resultField.text = "choose operation"
+        } else {
+            secondNo = operand
         }
     }
 
