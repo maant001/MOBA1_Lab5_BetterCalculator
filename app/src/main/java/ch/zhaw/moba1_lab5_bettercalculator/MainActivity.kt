@@ -1,31 +1,17 @@
 package ch.zhaw.moba1_lab5_bettercalculator
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import ch.zhaw.moba1_lab5_bettercalculator.databinding.ActivityMainBinding
-import com.google.android.material.textfield.TextInputEditText
+import androidx.appcompat.app.AppCompatActivity
 import ch.zhaw.moba1_lab5_bettercalculator.R.id.*
-
 
 class MainActivity : AppCompatActivity(), View.OnClickListener{
     private var firstNo: Number? = null
     private var secondNo: Number? = null
     private var operation: String = ""
-    //private var result: String = ""
     private lateinit var resultField: TextView
-
-    //private lateinit var appBarConfiguration: AppBarConfiguration
-    //private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -93,9 +79,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     private fun reset() {
         firstNo = null
         secondNo = null
-        //result = ""
-        operation = "" // TODO bug
-        //resultField.text = "0"
+        operation = ""
+
     }
 
     private fun setOperation(op: String) {
@@ -106,7 +91,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         }
     }
 
-    // TODO find solution for this function
     private fun setOperand(operand: Int) {
         if (firstNo == null) {
             firstNo = operand
