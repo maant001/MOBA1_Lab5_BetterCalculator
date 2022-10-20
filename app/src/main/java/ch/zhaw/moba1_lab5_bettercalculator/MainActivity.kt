@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
             firstNo = operand
             resultField.text = operand.toString()
         } else if (operation == "") {
-            resultField.text = "choose operation"
+            resultField.text = "choose operation for current result: " + resultField.text.toString()
         } else {
             secondNo = operand
             resultField.text = operand.toString()
@@ -116,10 +116,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
 
     private fun putResult(calc: Double) {
         resultField.text = calc.toString() // display result
-        var operationTemp: String = operation
+        //var operationTemp: String = operation
         reset() // reset for new calculation
         firstNo = calc // set current result as first operand for next calculation
-        operation = operationTemp
+        //operation = operationTemp
     }
 
 }
